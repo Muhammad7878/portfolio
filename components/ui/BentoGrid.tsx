@@ -1,10 +1,10 @@
-"use client"
+"use client";
 import { cn } from "@/utils/cn";
 import { BackgroundGradientAnimation } from "./GradientBG";
 import { GlobeDemo } from "./GridGlobe";
 import Lottie from "react-lottie";
-import { useState } from "react";
-import animationData from '@/data/confetti.json'
+import { useEffect, useState, useRef } from "react";
+import animationData from "@/data/confetti.json";
 import MagicButton from "./MagicButton";
 import { IoCopyOutline } from "react-icons/io5";
 export const BentoGrid = ({
@@ -47,14 +47,29 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
+  const [copied, setCopied] = useState(false);
+  const [animationId, setAnimationId] = useState<number>(Math.random() * 1000);
 
-  const [copied, setCopied] = useState(false)
 
-  const handleCopy = ()=>{
+  const handleCopy = () => {
     navigator.clipboard.writeText("muhammad.safarov@web.de");
 
-    setCopied(true)
-  }
+    setCopied(true);
+  };
+
+  useEffect(() => {
+    if (copied === true) {
+      setTimeout(() => {
+        setCopied(false);
+        setAnimationId(Math.random() * 1000)
+      }, 5000);
+    }
+  }, [copied]);
+
+  useEffect(() => {
+    console.log(copied);
+  }, [copied]);
+
   return (
     <div
       className={cn(
@@ -68,7 +83,7 @@ export const BentoGridItem = ({
           "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
       }}
     >
-      <div className={`${id === 6 && 'flex justify-center'} h-full`}>
+      <div className={`${id === 6 && "flex justify-center"} h-full`}>
         <div className="w-full h-full absolute">
           {img && (
             <img
@@ -109,58 +124,65 @@ export const BentoGridItem = ({
             {description}
           </div>
           <div className="font-sans font-bold text-lg lg:text-3xl max-w-96 z-10">
-          {title}
+            {title}
+          </div>
+
+          {id === 2 && <GlobeDemo />}
+          {id === 3 && (
+            <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
+              <div className="flex flex-col gap-3 lg:gap-8">
+                {["React.js", "Next.js", "Typescript"].map((item) => (
+                  <span
+                    key={item}
+                    className="py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132e]"
+                  >
+                    {item}
+                  </span>
+                ))}
+
+                <span className="py-4 px-3 rounded-lg text-center bg-[#010e3e]" />
+              </div>
+
+              <div className="flex flex-col gap-3 lg:gap-8">
+                <span className="py-4 px-3 rounded-lg text-center bg-[#010e3e]" />
+                {["Agile", "REST-API", "Clean Code"].map((item) => (
+                  <span
+                    key={item}
+                    className="py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132e]"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {id === 6 && (
+            <div className="mt-5 relative">
+              <div className={`absolute -bottom-5 right-0`}>
+                <Lottie
+                  key={animationId}
+                  options={{
+                    loop: copied,
+                    autoplay: copied,
+                    animationData: animationData,
+                    rendererSettings: {
+                      preserveAspectRatio: "xMidYMid slice",
+                    },
+                  }}
+                />
+              </div>
+              <MagicButton
+                title={copied ? "Email copied" : "Copy my email"}
+                icon={<IoCopyOutline />}
+                position="left"
+                otherClasses="bg-[#161a31]"
+                handleClick={handleCopy}
+              />
+            </div>
+          )}
         </div>
-
-        {id === 2 && <GlobeDemo />}
-        {id === 3 && (
-          <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
-            <div className="flex flex-col gap-3 lg:gap-8">
-              {["React.js","Next.js","Typescript",].map((item)=>(
-                <span key={item} className="py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132e]">
-                  {item}
-                </span>
-              ))}
-
-              <span className="py-4 px-3 rounded-lg text-center bg-[#010e3e]"/>
-            </div>
-
-            <div className="flex flex-col gap-3 lg:gap-8">
-              <span className="py-4 px-3 rounded-lg text-center bg-[#010e3e]"/>
-              {["Agile","REST-API","Clean Code"].map((item)=>(
-                <span key={item} className="py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132e]">
-                  {item}
-                </span>
-              ))}
-
-            </div>
-          </div>
-        )}
-
-        {id === 6 && (
-          <div className="mt-5 relative">
-            <div className={`absolute -bottom-5 right-0`}>
-              <Lottie options={{
-                loop:copied,
-                autoplay:copied,
-                animationData:animationData,
-                rendererSettings:{
-                  preserveAspectRatio:'xMidYMid slice'
-                }
-              }}/>
-            </div>
-            <MagicButton 
-              title={copied ? "Email copied" : "Copy my email"}
-              icon={<IoCopyOutline />}
-              position="left"
-              otherClasses="bg-[#161a31]"
-              handleClick={handleCopy}
-            />
-          </div>
-        )}
       </div>
     </div>
-    </div>
-
   );
 };
