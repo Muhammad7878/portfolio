@@ -67,21 +67,21 @@ const RecentProjects = () => {
                   className="flex justify-center items-center cursor-pointer group transition-all duration-300 hover:scale-110"
                   onClick={() => handleCheckSite(link)}
                 >
-                  {/*    <p className="flex lg:text-xl md:text-xs text-sm text-purple">
+                     <p className="flex lg:text-xl md:text-xs text-sm text-purple">
                     Check Live Site
                   </p>
                   <FaLocationArrow
                     className="ms-3"
                     color="#CBACF9"
-                  /> */}
+                  />
 
-                  <MagicButton
+                  {/* <MagicButton
                     title={"Check Live Site"}
                     icon={<FaLocationArrow className="ms-3" color="#CBACF9" />}
                     position="right"
                     otherClasses="bg-[#161a31]"
                     handleClick={() => handleCheckSite(link)}
-                  />
+                  /> */}
                 </div>
               </div>
             </div>
