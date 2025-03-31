@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev && next export",
-    "build": "next build",
+    "dev": "next dev",
+    "build": "next build && next export",
     "start": "next start",
     "lint": "next lint",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d out"
   },
-  "homepage": "https://muhammad7878.github.io/your-repo-name",
+  "homepage": "https://muhammad7878.github.io/portfolio",
   "dependencies": {
     "@react-three/drei": "^10.0.5",
     "@react-three/fiber": "^9.1.0",
