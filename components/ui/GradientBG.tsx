@@ -39,7 +39,7 @@ export const BackgroundGradientAnimation = ({
   const [curY, setCurY] = useState(0);
   const [tgX, setTgX] = useState(0);
   const [tgY, setTgY] = useState(0);
-  const [isClient, setIsClient] = useState(true)
+  const [isClient, setIsClient] = useState(false)
   useEffect(() => {
     setIsClient(true); 
   }, []);
@@ -52,7 +52,9 @@ export const BackgroundGradientAnimation = ({
       "--gradient-background-end",
       gradientBackgroundEnd
     );
-    if(isClient){
+    if(!isClient){
+      return
+    }else{
 
       document.body.style.setProperty("--first-color", firstColor);
       document.body.style.setProperty("--second-color", secondColor);
@@ -63,7 +65,7 @@ export const BackgroundGradientAnimation = ({
       document.body.style.setProperty("--size", size);
       document.body.style.setProperty("--blending-value", blendingValue);
     }
-  }, []);
+  }, [isClient]);
 
   useEffect(() => {
     function move() {
