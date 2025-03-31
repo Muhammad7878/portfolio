@@ -170,40 +170,33 @@ export const projects = [
 export const testimonials = [
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "Muhammad und ich haben im Rahmen eines 3-tägigen Hackathons mit einem Kunden zusammengearbeitet. Muhammad hat sich in kürzester Zeit in die Thematik eingearbeitet, die Anforderungen des Kunden verstanden und eigenständig ein entsprechendes Frontend für den KI Prototypen entwickelt. Er hat vor allem durch seine hohe Einsatzbereitschaft, Motivation und sein Durchhaltevermögen geglänzt und überzeugt.",
+    name: "Bianca K",
+    title: "Senior Managing Consultant Public Sector & Project Lead",
+  },
+  {
+    quote: `Muhammad works on the Project DocAdmin for the customer Commerzbank. He is also responsible for maintaining code clarity. He has demonstrated problem-solving skills and creativity in overcoming obstacles. Using his expertise in TypeScript and React, he successfully implemented features and met customer requirements. He is a team player and collaborated effectively with colleagues, particularly while implementing the “Providerwechsel” feature, which turned out to be more complex than initially expected and estimated. However, in the end, the task was successfully completed and presented. Mukhammadzhon takes on frontend subtasks and, particularly in the recent past, has completed them independently. For example, in the implementation of the “Edit Default Document” feature, he thoroughly explored the codebase on his own to provide an effective solution.`,
+    name: "Mubariz A",
+    title: "Frontend Developer",
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "Während der Arbeit in der Zelle DCA wurde bisher qualitativ gute Arbeit festgestellt. Zudem bringt Muhammad eigene Ideen ein und geht proaktiv auf Herausforderungen ein, was zur kontinuierlichen Verbesserung beiträgt. Übertragene bzw. von ihm „gepullte“ Aufgaben werden in einer guten Zeit erledigt wodurch er das Projekt und das Team sehr gut unterstützt. Ebenfalls positiv zu bewerten ist ein von mir geäußerter Wunsch, in Teams-Meetings die Kamera öfter anzumachen. Seit dieser Äußerung wurde der Wunsch bereits zu 100 % umgesetzt – danke dafür.",
+    name: "Alessandro G",
+    title: "Product Owner - Commerzbank",
   },
+
   {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+    quote: `Dear Muhammad, I'm really impressed with your work on the DocAdmin project! You quickly got up to speed with React and TypeScript, and your ability to troubleshoot complex issues and learn from mistakes is top-notch. The "Provider Wechseln" function was a tough nut to crack, but you persevered and came out on top. Refactoring the code to simplify component interactions was a great call, and the final product looked awesome. Everyone was stoked with the result! You also did a great job on the "Edit default document" feature. You applied your previous experience to tackle the challenges, and your creative solution to the outdated component library issue was impressive. The end result looks modern and user-friendly, and you even managed to catch a backend bug - nice work! I've also received great feedback from the customer, who's been impressed with the quality of your work and your ability to deliver tasks on time. You've been a huge support to the project and the team, and your skills have been a valuable asset. Overall, you've been doing a fantastic job, and I'm grateful to have you on the team. Keep up the great work!`,
+    name: "Olexander T",
+    title: "Practice Lead Cognitive, Data & AI",
   },
 ];
 
 export const companies = [
   {
     id: 1,
-    name: "cloudinary",
+    name: "IBM",
     img: "/cloud.svg",
     nameImg: "/cloudName.svg",
   },
@@ -219,18 +212,7 @@ export const companies = [
     img: "/host.svg",
     nameImg: "/hostName.svg",
   },
-  {
-    id: 4,
-    name: "stream",
-    img: "/s.svg",
-    nameImg: "/streamName.svg",
-  },
-  {
-    id: 5,
-    name: "docker.",
-    img: "/dock.svg",
-    nameImg: "/dockerName.svg",
-  },
+
 ];
 
 export const workExperience = [
@@ -267,13 +249,19 @@ export const socialMedia = [
   {
     id: 1,
     img: "/git.svg",
+    link: "https://github.com/Muhammad7878",
+
   },
   {
     id: 2,
-    img: "/twit.svg",
+    img: "/insta.svg",
+    link: "https://www.instagram.com/muhammad.bln7778/?hl=en",
+
   },
   {
     id: 3,
     img: "/link.svg",
+    link: "https://www.linkedin.com/in/muhammad-safarov-8a1666160/",
+
   },
 ];
