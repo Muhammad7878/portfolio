@@ -7,14 +7,16 @@ Make sure you have the following installed on your machine:
 Git
 Node.js
 npm (Node Package Manager)
-Cloning the Repository
 
+Cloning the Repository:
+https://github.com/Muhammad7878/portfolio.git
 cd portfolio
+
 Installation
 
 Install the project dependencies using npm:
-
 npm install
+
 Running the Project
 
 npm run dev
